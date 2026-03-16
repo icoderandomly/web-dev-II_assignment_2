@@ -1,6 +1,4 @@
-//================================
-// Weather Tracker App
-//================================  
+
 const API_KEY = "dc1adf0a01f2ea6709aaf0a92c9a7d37"; 
 const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 
@@ -10,17 +8,13 @@ const weatherBox = document.getElementById("weatherResult");
 const historyBox = document.getElementById("history");
 const logBox = document.getElementById("logBox");
 
-// ================================
-// Console Logger (Event Loop Demo)
-// ================================
+
 function log(message) {
     console.log(message);
     logBox.textContent += message + "\n";
 }
 
-// ================================
-// Fetch Weather (Async /Await)
-// ================================
+
 async function getWeather(city) {
     log("Function Started");
     log("Before fetch()");
@@ -44,9 +38,7 @@ async function getWeather(city) {
     log("Function Ended");
 }
 
-// ================================
-// Promise Version (.then/ .catch)
-// ================================
+
 function getWeatherUsingPromise(city) {
     log("Promise Version Started");
 
@@ -67,9 +59,7 @@ function getWeatherUsingPromise(city) {
         });
 }
 
-// ================================
-// Display Weather
-//=================================
+
 function displayWeather(data) {
 
     weatherBox.innerHTML = `
@@ -81,16 +71,12 @@ function displayWeather(data) {
     `;
 }
 
-// ================================
-// Show Error
-// ================================
+
 function showError(message) {
     weatherBox.innerHTML = `<span style="color: red;">${message}</span>`;
 }
 
-// ================================
-// Local Storage - Save City
-// ================================
+
 function saveCity(city) {
 
     let cities = JSON.parse(localStorage.getItem("weatherCities")) || [];
@@ -102,9 +88,7 @@ function saveCity(city) {
     loadHistory();
 }
 
-//===============================
-// Load Search History
-//===============================
+
 function loadHistory() {
 
     historyBox.innerHTML = "";
@@ -122,9 +106,6 @@ function loadHistory() {
     });
 }
 
-// ================================
-// Search Button Event
-// ================================
 searchBtn.addEventListener("click", () => {
     const city = cityInput.value.trim();
 
@@ -139,9 +120,6 @@ searchBtn.addEventListener("click", () => {
     cityInput.value = "";
 });
 
-// ================================
-// On Page Load
-// ================================
 window.addEventListener("load", () => {
     log("Page Loaded");
     loadHistory();
