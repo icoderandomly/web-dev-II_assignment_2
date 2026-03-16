@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Async Weather Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>🌤 Async Weather Tracker</h1>
+
+    <div class="card">
+      <h3>Search City</h3>
+      <input type="text" id="cityInput" placeholder="Enter city name">
+      <button id="searchBtn">Search</button>
+
+      <h4>Search History</h4>
+      <div id="history"></div>
+    </div>
+
+    <div class="card">
+      <h3>Weather Info</h3>
+      <div id="weatherResult">No data yet</div>
+    </div>
+
+    <div class="console">
+      <h3>Console - Event Loop</h3>
+      <pre id="logBox"></pre>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
